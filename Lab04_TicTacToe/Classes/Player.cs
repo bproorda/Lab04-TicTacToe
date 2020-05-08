@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-    public class Player
-    {
+	public class Player
+	{
 		public string Name { get; set; }
 		/// <summary>
 		/// P1 is X and P2 will be O

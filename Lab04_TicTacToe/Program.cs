@@ -20,7 +20,7 @@ namespace Lab04_TicTacToe
             player1.Name = "Scott";
             player2.Name = "Brennan";
             Game newGame = new Game(player1, player2);
-    
+            newGame.Board.DisplayBoard();
         }
 
 

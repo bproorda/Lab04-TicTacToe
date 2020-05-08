@@ -45,7 +45,8 @@ namespace TicTacToe.Tests
             //assert 
             Assert.Equal(expected, result);
         }
-        [Fact]
+       
+            [Fact]
         public void PositionForNumberTest()
         {
             //Arrange

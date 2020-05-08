@@ -21,8 +21,18 @@ namespace Lab04_TicTacToe.Classes
 		{
 
 			//TODO: Output the board to the console
-			
-			Console.WriteLine(string.Join(", ", this));
+
+			for (int i = 0; i < GameBoard.GetLength(0); i++)
+			{
+				string row = "| ";
+				for (int j = 0; j < GameBoard.GetLength(1); j++)
+				{
+					//Console.WriteLine(GameBoard[i, j]);
+					row = row + $"{GameBoard[i, j]} | ";
+				}
+				Console.WriteLine(row);
+				
+			}
 			
 			
 		}
