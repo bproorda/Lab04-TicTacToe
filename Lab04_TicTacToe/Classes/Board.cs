@@ -27,7 +27,6 @@ namespace Lab04_TicTacToe.Classes
 				string row = "| ";
 				for (int j = 0; j < GameBoard.GetLength(1); j++)
 				{
-					//Console.WriteLine(GameBoard[i, j]);
 					row = row + $"{GameBoard[i, j]} | ";
 				}
 				Console.WriteLine(row);
