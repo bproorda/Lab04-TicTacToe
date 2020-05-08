@@ -80,14 +80,14 @@ namespace Lab04_TicTacToe.Classes
 				Position p2 = Player.PositionForNumber(winners[i][1]);
 				Position p3 = Player.PositionForNumber(winners[i][2]);
 
+				//grabs the numerical using the row and cols as indices. why I do not know.
 				string a = Board.GameBoard[p1.Row, p1.Column];
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 				
-				Console.WriteLine($"{winners[i][0]} {winners[i][1]} {winners[i][2]}");
+				/* Console.WriteLine($"{winners[i][0]} {winners[i][1]} {winners[i][2]}");
 				Console.WriteLine($"Postion 1: {p1.Row},  {p1.Column}, Position 2: {p2.Row},  {p2.Column}, Position 3: {p3.Row},  {p3.Column} ");
-				Console.WriteLine($" {a} {b} {c} ");
-				//Console.WriteLine(p1.Column);
+				Console.WriteLine($" {a} {b} {c} "); */
 				// TODO:  Determine a winner has been reached. 
 				// return true if a winner has been reached. 
 
