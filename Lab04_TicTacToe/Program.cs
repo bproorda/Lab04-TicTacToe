@@ -21,13 +21,19 @@ namespace Lab04_TicTacToe
             Console.WriteLine("What is the name of Player 1?");
             player1.Name = Console.ReadLine();
             player1.Marker = "X";
+            player1.IsTurn = true;
             Console.WriteLine("What is the name of Player 1?");
             player2.Name = Console.ReadLine();
             player2.Marker = "O";
+            player2.IsTurn = false;
             Console.WriteLine($"Hello, {player1.Name} and {player2.Name}");
             Console.WriteLine($"{player1.Name} shall play {player1.Marker}, and {player2.Name} shall play {player2.Marker}");
             Game newGame = new Game(player1, player2);
             newGame.Board.DisplayBoard();
+            Player winner = newGame.Play();
+          
+            
+
         }
 
 

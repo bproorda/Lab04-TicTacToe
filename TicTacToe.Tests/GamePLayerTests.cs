@@ -5,6 +5,11 @@ using Lab04_TicTacToe.Classes;
 using Xunit;
 
 namespace TicTacToe.Tests
+/* Tests we need 
+ 1. Given a game board, test for winners
+2. Test that there is a switch in players between turns
+3. Test to confirm that the position the player inputs correlates to the correct index of the array
+4. One other "unique" test of your own */
 {
     public class GamePLayerTests
     {
@@ -66,5 +71,25 @@ namespace TicTacToe.Tests
             Assert.Equal(expected, result);
 
         }
+        [Fact]
+        public void SwitchPLayerTest()
+        {
+            //Arrange
+            Lab04_TicTacToe.Classes.Player player1 = new Player();
+            Lab04_TicTacToe.Classes.Player player2 = new Player();
+            player1.Name = "Scott";
+            player2.Name = "Brennan";
+            Lab04_TicTacToe.Classes.Game newGame = new Game(player1, player2);
+            player1.IsTurn = true;
+            player2.IsTurn = false;
+
+            //Act
+            newGame.SwitchPlayer();
+
+            //Assert
+            Assert.False(player1.IsTurn);
+            Assert.True(player2.IsTurn);
+
+    }
     }
 }
