@@ -56,7 +56,7 @@ namespace Lab04_TicTacToe.Classes
 	
 		public void TakeTurn(Board board)
 		{
-			IsTurn = false;
+			//IsTurn = false;
 
 			Console.WriteLine($"{Name} it is your turn");
 

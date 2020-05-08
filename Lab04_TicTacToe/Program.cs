@@ -22,7 +22,7 @@ namespace Lab04_TicTacToe
             player1.Name = Console.ReadLine();
             player1.Marker = "X";
             player1.IsTurn = true;
-            Console.WriteLine("What is the name of Player 1?");
+            Console.WriteLine("What is the name of Player 2?");
             player2.Name = Console.ReadLine();
             player2.Marker = "O";
             player2.IsTurn = false;
@@ -31,6 +31,7 @@ namespace Lab04_TicTacToe
             Game newGame = new Game(player1, player2);
             newGame.Board.DisplayBoard();
             Player winner = newGame.Play();
+            Console.WriteLine($"Congratulations, {winner.Name}! You won!");
           
             
 
