@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-	class Game
+	public class Game
 	{
 		public Player PlayerOne { get; set; }
 		public Player PlayerTwo { get; set; }
@@ -59,6 +59,7 @@ namespace Lab04_TicTacToe.Classes
 		{
 			int[][] winners = new int[][]
 			{
+				//shows winning positions by number
 				new[] {1,2,3},
 				new[] {4,5,6},
 				new[] {7,8,9},
@@ -74,6 +75,7 @@ namespace Lab04_TicTacToe.Classes
 			// Given all the winning conditions, Determine the winning logic. 
 			for (int i = 0; i < winners.Length; i++)
 			{
+				//creates postion objects for showing winning positions by row and col
 				Position p1 = Player.PositionForNumber(winners[i][0]);
 				Position p2 = Player.PositionForNumber(winners[i][1]);
 				Position p3 = Player.PositionForNumber(winners[i][2]);
@@ -81,12 +83,16 @@ namespace Lab04_TicTacToe.Classes
 				string a = Board.GameBoard[p1.Row, p1.Column];
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
-
+				
+				Console.WriteLine($"{winners[i][0]} {winners[i][1]} {winners[i][2]}");
+				Console.WriteLine($"Postion 1: {p1.Row},  {p1.Column}, Position 2: {p2.Row},  {p2.Column}, Position 3: {p3.Row},  {p3.Column} ");
+				Console.WriteLine($" {a} {b} {c} ");
+				//Console.WriteLine(p1.Column);
 				// TODO:  Determine a winner has been reached. 
 				// return true if a winner has been reached. 
-			
-			}
 
+			}
+			
 			return false;
 		}
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-    class Player
+    public class Player
     {
 		public string Name { get; set; }
 		/// <summary>
@@ -17,7 +17,7 @@ namespace Lab04_TicTacToe.Classes
 		/// </summary>
 		public bool IsTurn { get; set; }
 
-
+		//Prompts the player to select a numbered postion, then uses PositionForNumber to select right Position object
 		public Position GetPosition(Board board)
 		{
 			Position desiredCoordinate = null;
@@ -31,7 +31,8 @@ namespace Lab04_TicTacToe.Classes
 
 		}
 
-
+		//connected number from board to new postion object
+		//returns null if invalid number chosen
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
@@ -49,7 +50,9 @@ namespace Lab04_TicTacToe.Classes
 				default: return null;
 			}
 		}
-
+		//Tells the current player to take their turn
+		//uses GetPosition to create new position object
+		// if not a number, converts position to player's marker
 	
 		public void TakeTurn(Board board)
 		{
