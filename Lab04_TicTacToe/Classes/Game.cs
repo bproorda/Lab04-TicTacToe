@@ -30,13 +30,18 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-			Player nowPLaying = NextPlayer();
-			nowPLaying.TakeTurn(Board);
-			Board.DisplayBoard();
-			SwitchPlayer();
-			nowPLaying = NextPlayer();
-			nowPLaying.TakeTurn(Board);
-			Board.DisplayBoard();
+			int turn = 1;
+
+			Player nowPlaying = PlayerOne;
+			while (!CheckForWinner(Board) && turn <10)
+			{
+				Player nowPLaying = NextPlayer();
+				nowPLaying.TakeTurn(Board);
+				Board.DisplayBoard();
+				SwitchPlayer();
+				turn++;
+
+			}
 
 
 			//Console.WriteLine(nowPLaying.Name);
@@ -58,7 +63,7 @@ namespace Lab04_TicTacToe.Classes
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
 
-			return nowPLaying;
+			return PlayerOne;
 		}
 
 
