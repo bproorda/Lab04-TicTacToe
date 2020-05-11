@@ -30,28 +30,38 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-			int turn = 1;
-
-			Player nowPlaying = PlayerOne;
-			while (!CheckForWinner(Board) && turn <10)
+			try
 			{
-		
-				NextPlayer().TakeTurn(Board);
+				int turn = 1;
+
+				Player nowPlaying = PlayerOne;
+				while (!CheckForWinner(Board) && turn < 10)
+				{
+
+					NextPlayer().TakeTurn(Board);
+					Board.DisplayBoard();
+					SwitchPlayer();
+					turn++;
+				}
 				Board.DisplayBoard();
-				SwitchPlayer();
-				turn++;
-			}
-			Board.DisplayBoard();
 
-			if (CheckForWinner(Board))
+				if (CheckForWinner(Board))
+				{
+					SwitchPlayer();
+					this.Winner = NextPlayer();
+					return Winner;
+				}
+				else
+				{
+					return null;
+				}
+			}
+			catch (Exception)
 			{
-				SwitchPlayer();
-				this.Winner = NextPlayer();
-				return Winner;
-			} else
-			{
+				Console.WriteLine("Error Detected");
 				return null;
 			}
+			
 
 
 			//Console.WriteLine(nowPLaying.Name);
@@ -110,7 +120,6 @@ namespace Lab04_TicTacToe.Classes
 				string a = Board.GameBoard[p1.Row, p1.Column];
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
-				Console.WriteLine($"{a} {b} {c}");
 				
 				if( a == b && b == c)
 				{
