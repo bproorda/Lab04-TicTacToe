@@ -30,7 +30,7 @@ namespace Lab04_TicTacToe
             Player player2 = new Player()
             {
                 Name = Console.ReadLine(),
-                Marker = "0",
+                Marker = "O",
                 IsTurn = false,
             };
             Console.WriteLine($"Hello, {player1.Name} and {player2.Name}");
