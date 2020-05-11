@@ -43,7 +43,14 @@ namespace Lab04_TicTacToe
 
             //Calling play method and waiting for it to return a winnner
             Player winner = newGame.Play();
-            Console.WriteLine($"Congratulations, {winner.Name}! You won!");
+            if (winner != null)
+            {
+                Console.WriteLine($"Congratulations, {winner.Name}! You won!");
+            } else
+            {
+                Console.WriteLine("An interesting game, the only way to win is not to play.");
+            }
+            
           
             
 

@@ -35,12 +35,21 @@ namespace Lab04_TicTacToe.Classes
 			Player nowPlaying = PlayerOne;
 			while (!CheckForWinner(Board) && turn <10)
 			{
-				Player nowPLaying = NextPlayer();
-				nowPLaying.TakeTurn(Board);
+		
+				NextPlayer().TakeTurn(Board);
 				Board.DisplayBoard();
 				SwitchPlayer();
 				turn++;
+			}
+			Board.DisplayBoard();
 
+			if (CheckForWinner(Board))
+			{
+				this.Winner = NextPlayer();
+				return Winner;
+			} else
+			{
+				return null;
 			}
 
 
@@ -62,8 +71,6 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
-
-			return PlayerOne;
 		}
 
 
