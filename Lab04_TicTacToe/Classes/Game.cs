@@ -45,6 +45,7 @@ namespace Lab04_TicTacToe.Classes
 
 			if (CheckForWinner(Board))
 			{
+				SwitchPlayer();
 				this.Winner = NextPlayer();
 				return Winner;
 			} else
@@ -97,6 +98,7 @@ namespace Lab04_TicTacToe.Classes
 			};
 
 			// Given all the winning conditions, Determine the winning logic. 
+			bool answer = false;
 			for (int i = 0; i < winners.Length; i++)
 			{
 				//creates postion objects for showing winning positions by row and col
@@ -108,23 +110,20 @@ namespace Lab04_TicTacToe.Classes
 				string a = Board.GameBoard[p1.Row, p1.Column];
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
+				Console.WriteLine($"{a} {b} {c}");
 				
 				if( a == b && b == c)
 				{
-					return true;
+					answer = true;
+					break;
 				} else
 				{ 
-					return false;
+					answer = false;
 				}
-				/* Console.WriteLine($"{winners[i][0]} {winners[i][1]} {winners[i][2]}");
-				Console.WriteLine($"Postion 1: {p1.Row},  {p1.Column}, Position 2: {p2.Row},  {p2.Column}, Position 3: {p3.Row},  {p3.Column} ");
-				Console.WriteLine($" {a} {b} {c} "); */
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
 
 			}
 			
-			return false;
+			return answer;
 		}
 
 
